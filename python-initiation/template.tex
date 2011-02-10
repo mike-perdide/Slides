@@ -1,0 +1,40 @@
+\documentclass[xcolor*pst]{beamer}
+\usetheme{Berlin}
+% Madrid: titre de la diapo en header, nom de la boîte, date et page en footer
+% Berlin: 
+
+\usefonttheme[onlylarge]{structurebold}
+\usecolortheme{orchid}
+% orchid: noir sur blanc, headers bleu
+% fly: noir sur gris
+% albatross: blanc sur bleu
+% dove: blanc sur noir
+\setbeamerfont*{frametitle}{size=\normalsize,series=\bfseries}
+%\setbeamertemplate{navigation symbols}{}
+
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{times}
+%\usepackage{hyperref}
+%\usepackage{listings}
+
+\title{}
+\author{}
+\institute{Catopuma}
+
+\begin{document}
+
+%  \logo{\includegraphics[width=2cm]{ourLogo.png}}
+  
+  \input{introduction}
+  
+  \begin{frame}
+    \section*{Table des matières}
+    \frametitle{Table des matières} 
+    \tableofcontents
+  \end{frame}
+  
+  \input{slides}
+
+\end{document}
