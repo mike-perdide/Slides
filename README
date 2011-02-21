@@ -1,0 +1,8 @@
+How to make the snapshots:
+    
+    * Use konsole, with the font Terminus, size 23
+    * For the colors, choose Dark Pastels (Settings, Manage, Edit, Appareance)
+    * With ksnapshot, choose the region you want to snapshot
+    * As much as possible, the width of the snapshot should be 1062
+    * Include the snapshot in your slide with :
+        \includegraphics[scale=0.35]{snapshot.png}
