@@ -164,16 +164,34 @@
 \subsection{Les déclarations conditionnelles}
 \begin{frame}[fragile]
   \frametitle{Structure de base}
-    \setbeamercolor{terminal}{fg=white, bg=black}
-\lstset{language=Python,frame=single,numbers=left, stepnumber=2, columns=flexible}
-\begin{lstlisting}
+  \begin{lstlisting}
 if condition1:
     declaration1
 elif condition2:
     declaration2
 else:
     declaration3
-\end{lstlisting}
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Structure de base - exemple}
+  \begin{lstlisting}
+my_str = "word"
+if 1 > 2:
+    print "1>2"
+elif my_str == "word":
+    print "my_str = word"
+else:
+    print "else"
+  \end{lstlisting}
+
+  \begin{beamercolorbox}{terminal}
+  \begin{semiverbatim}
+ \$ python example.py
+ \begin{uncoverenv}<2>my_str = word\end{uncoverenv}
+  \end{semiverbatim}
+  \end{beamercolorbox}
 
 \end{frame}
 
