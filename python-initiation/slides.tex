@@ -195,6 +195,52 @@ else:
 
 \end{frame}
 
+\begin{frame}[fragile]
+  \frametitle{Les conditions}
+  \begin{itemize}
+    \item les comparaisons
+    \begin{beamercolorbox}{terminal}
+    \begin{semiverbatim}
+\uncover<1->{In [1]: (1 == 2, 1 < 2, 2 < 1, 1 != 2)}
+\uncover<1->{Out[1]: (False, True, False, True)}
+
+\uncover<2>{In [2]: my_str = "hello"}
+\uncover<2>{In [2]: (my_str == "hello", my_str > "helln",
+   ...: my_str < "hellq")}
+\uncover<2>{Out[2]: (True, True, True)}
+    \end{semiverbatim}
+    \end{beamercolorbox}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Les conditions}
+  \begin{itemize}
+    \item les opérateurs booléens
+    \begin{beamercolorbox}{terminal}
+    \begin{semiverbatim}
+In [1]: not True and False or not False
+Out[1]: True
+    \end{semiverbatim}
+    \end{beamercolorbox}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Les conditions}
+  \begin{itemize}
+    \item par extension, certains objets vides sont équivalent à False
+    \begin{beamercolorbox}{terminal}
+    \begin{semiverbatim}
+In [1]: my_str = ""
+In [1]: if not my_str:
+   ...:     print "False"
+False
+    \end{semiverbatim}
+    \end{beamercolorbox}
+  \end{itemize}
+\end{frame}
+
 %  \framesubtitle{The proof uses \textit{reductio ad absurdum}.}
 %  \begin{theorem}
 %      There is no largest prime number.
