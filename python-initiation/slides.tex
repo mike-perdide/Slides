@@ -82,6 +82,9 @@
     // à votre avis ?
     //
     // 2) mentionner le ducktyping ? (à votre avis)
+    // 2.1) Pour être callable il suffit d'implémenter 'def \_\_call\_\_(...)'
+    // 2.2) pour être indexable : \_\_setitem\_\_(...), \_\_getitem\_\_(...)
+    // Je ne sais pas trop comment insérer ça dans le cours, ça devrait venir plus tard dans le détail et c'est un peu hors sujet dans le prototypage..
   \includegraphics[scale=0.35]{prototype.png}
 \end{frame}
 
@@ -103,6 +106,21 @@
 
 \section{La syntaxe Python}
 \subsection{Les principaux types de structure}
+//note feth:
+//suggestion de réorganiser ceci:
+// 1 Les types de base Python
+// 1.1 Quelques types simples
+//     - entiers
+//     - flottants
+//     - True, False
+//     - None
+// 1.2 Quelques structures de données
+//     - les chaines de caractère sont des séquences comme les autres
+//     - séquence: list modifiable, tuple non modifiable, queue...
+//     - dictionnaire
+//     - ensemble (partie gauche d'un dict): set modifiable, frozenset non modifiable
+// 1.3 Quelques autres types courants (juste les évoquer)
+//     - classe, fonction ou méthode, module
 
 \begin{frame}
   \frametitle{Les principaux types de structure}
