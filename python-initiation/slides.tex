@@ -24,6 +24,8 @@
 \frametitle{Valeurs et philosophie}
   \begin{itemize}
     \item Orienté objet
+    //note feth:
+    //utilisation souple (programmation impérative, orientée aspect, haut niveau ou bas niveau...)
     \pause
     \item Extensible (librairies standard, modules C, C++, ...)
   \end{itemize}
@@ -35,6 +37,8 @@
   \begin{itemize}
     \item Un travail de recherche via les PEP
     \pause
+    //note feth:
+    //mots clefs: efficacité en terme de lisibilité, pythonique, élégance (comme en maths)
     \item 1 seul bon moyen de faire
   \end{itemize}
 \end{frame}
@@ -50,7 +54,7 @@
     \item Exécution de code dynamique
     \item Interaction avec le système
     \item Historique des commandes
-    \item Journalisation 
+    \item Journalisation
   \end{itemize}
 \end{frame}
 
@@ -69,6 +73,15 @@
     \begin{itemize}
       \item prototyper une fonctionnalité
     \end{itemize}
+    //note feth:
+    // 1)
+    //plutôt qu'un getter sur une var publique
+    //je suggère une fonction qui fasse quelque chose, comme
+    //def greet(self, name):
+    //    return "%s greets %s." (self.name, name)
+    // à votre avis ?
+    //
+    // 2) mentionner le ducktyping ? (à votre avis)
   \includegraphics[scale=0.35]{prototype.png}
 \end{frame}
 
@@ -101,6 +114,9 @@
       \item<5-> les sets
       \item<6-> les dictionnaires
       \item<7-> les booléens
+      //note feth: la valeur 'Rien' plutôt.
+      // None est un objet singleton très pratique qu'on peut manipuler et qui a des attributs, contrairement à NULL, pointeur vers 0x0 (on ne parle pas de pointeurs en Python).
+      // à votre avis ?
       \item<8-> la valeur nulle
     \end{itemize}
 \end{frame}
