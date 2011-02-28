@@ -24,11 +24,12 @@
 \frametitle{Valeurs et philosophie}
   % En fait ici on présente ce qu'on va voir, afin de pouvoir terminer par CQFD!
   \begin{itemize}
-    \item Orienté objet
+    \item<1-> Orienté objet
     %note feth:
     %utilisation souple (programmation impérative, orientée aspect, haut niveau ou bas niveau...)
-    \pause
-    \item Extensible (librairies standard, modules C, C++, \ldots)
+    \item<2-> Extensible (librairies standard, modules C, C++, \ldots)
+    \item<3-> Programmation souple : orientée aspect, haut niveau
+    \item<4-> Convergence de l'élégance
   \end{itemize}
 \end{frame}
 
@@ -36,10 +37,41 @@
 \begin{frame}
 \frametitle{La recherche du meilleur chemin}
   \begin{itemize}
-    \item Un travail de recherche via les PEP
+    \item Un travail de recherche via les PEP (Python Enhancement Proposal). Exemples:
+    \begin{itemize}
+      \item PEP 8: Style Guide for Python Code
+      \item PEP 100: Python Unicode Integration
+      \item PEP 386: Changing the version comparison module in Distutils
+    \end{itemize}
     \pause
     %note feth:
     %mots clefs: efficacité en terme de lisibilité, pythonique, élégance (comme en maths)
-    \item un seul bon moyen de faire, pas de comportement par défaut comme en Perl par exemple
+    \item Un seul bon moyen de faire, pas de comportement implicite
+    \begin{itemize}
+      \item Si une déclaration n'est pas assez explicite, on préferera faire échouer la commande
+      \item "In the face of ambiguity, refuse the temptation to guess."
+    \end{itemize}
+    \pause
+    \item Si le code n'est pas élégant, c'est qu'il y a une meilleure façon de faire
   \end{itemize}
 \end{frame}
+
+\begin{frame}[fragile]
+\frametitle{En résumé, la philosophie de Python c'est :}
+Tiré de la PEP 20, The Zen of Python :
+  \begin{itemize}
+    \item Beautiful is better than ugly.
+    \item Explicit is better than implicit.
+    \item Simple is better than complex.
+    \item Complex is better than complicated.
+    \item Flat is better than nested.
+    \item Sparse is better than dense.
+    \item Readability counts.
+    \item Special cases aren't special enough to break the rules.
+    \item Errors should never pass silently.
+    \item In the face of ambiguity, refuse the temptation to guess.
+    \item There should be one-- and preferably only one --obvious way to do it.
+    \item If the implementation is hard to explain, it's a bad idea.
+  \end{itemize}
+\end{frame}
+% a frame on PEP20 please
