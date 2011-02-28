@@ -1,0 +1,144 @@
+\section{La syntaxe de Python}
+
+\subsection{Les instructions}
+\begin{frame}
+  \frametitle{Les instructions}
+XXX TODO
+  \semiverbatim{séparateur d'instruction : ';' (éviter) ou '\\n'}
+\end{frame}
+
+\subsection{Les blocs}
+\begin{frame}[fragile]
+  \frametitle{Les blocs}
+  \begin{itemize}
+    \item En Python le code est regroupé en bloc.
+    \item Les blocs sont définis par:
+    \begin{itemize}
+      \item La ligne précédente commence par un mot clef, se termine par ':'
+      \item Leur niveau d'indentation.
+    \end{itemize}
+    \item Les mots clefs de définition de blocs : \alert<1->{if}, \alert<2->{while}, \alert<3->{for}, \alert<4->{def}, \alert<5->{class}, \alert<6->{with}
+  \end{itemize}
+
+\end{frame}
+
+\subsection{Les déclarations conditionnelles}
+\begin{frame}[fragile]
+  \frametitle{Syntaxe de base}
+  \begin{lstlisting}
+if condition1:
+    declaration1
+elif condition2:
+    declaration2
+else:
+    declaration3
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Structure de base - exemple}
+  \begin{lstlisting}
+my_str = "word"
+if 1 > 2:
+    print "1>2"
+elif my_str == "word":
+    print "my_str = word"
+else:
+    print "else"
+  \end{lstlisting}
+
+  \begin{beamercolorbox}{terminal}
+  \begin{semiverbatim}
+ \$ python example.py
+ \uncover<2>{my_str = word} \end{semiverbatim}
+  \end{beamercolorbox}
+
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Les conditions}
+  \begin{itemize}
+    \item les comparaisons
+  \end{itemize}
+  \begin{beamercolorbox}{terminal}
+  \begin{semiverbatim}
+\uncover<1->{ In [1]: (1 == 2, 1 < 2, 2 < 1, 1 != 2)}
+\uncover<1->{ Out[1]: (False, True, False, True)}
+
+\uncover<2>{ In [2]: my_str = "hello"}
+\uncover<2>{ In [2]: (my_str == "hello", my_str > "helln",
+    ...: my_str < "hellq")}
+\uncover<2>{ Out[2]: (True, True, True)}\end{semiverbatim}
+    \end{beamercolorbox}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Les conditions}
+  \begin{itemize}
+    \item les opérateurs booléens
+  \end{itemize}
+  \begin{beamercolorbox}{terminal}
+  \begin{semiverbatim}
+ In [1]: not True and False or not False
+ Out[1]: True\end{semiverbatim}
+  \end{beamercolorbox}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Les conditions}
+  \begin{itemize}
+    \item par extension, certains objets vides sont équivalent à False
+  \end{itemize}
+  \begin{beamercolorbox}{terminal}
+  \begin{semiverbatim}
+ In [1]: my_str = ""
+ In [1]: if not my_str:
+    ...:     print "False"
+ False\end{semiverbatim}
+  \end{beamercolorbox}
+\end{frame}
+
+\subsection{Les boucles}
+\begin{frame}[fragile]
+  \frametitle{Les boucles}
+  \begin{itemize}
+  \item for : répéter tant qu'il y a des éléments dans un ensemble
+  \item while : répéter tant qu'une condition reste vraie
+  \end{itemize}
+
+Compatbile : break/continue (comme dans les autres langages)
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Syntaxe de for}
+  \begin{lstlisting}
+for item in <generator>:
+    code ...
+  \end{lstlisting}
+Examples de générateur :
+  \begin{itemize}
+  \item ("item1", "item2", "item3")
+  \item range(5) ou (0, 1, 2, 3, 4)
+  \item xrange(5)
+  \item n'importe quel objet ayant la méthode next()
+  \end{itemize}
+\end{frame}
+
+\subsection{Les méthodes/functions}
+\begin{frame}[fragile]
+  \begin{lstlisting}
+def nom_de_methode(arg1, arg2, arg3):
+    code ...
+  \end{lstlisting}
+  \begin{semiverbatim}
+mot clef def
+  \end{semiverbatim}
+\end{frame}
+
+\subsection{Les classes}
+\begin{frame}[fragile]
+\end{frame}
+
+\section{Quelques librairies standard}
+\begin{frame}[fragile]
+\end{frame}
