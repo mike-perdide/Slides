@@ -1,12 +1,5 @@
 \section{La syntaxe de Python}
 
-\subsection{Les instructions}
-\begin{frame}
-  \frametitle{Syntaxe - Les instructions}
-XXX TODO
-  \semiverbatim{séparateur d'instruction : ';' (éviter) ou '\\n'}
-\end{frame}
-
 \subsection{Les blocs}
 \begin{frame}[fragile]
   \frametitle{Syntaxe - Les blocs}
@@ -20,6 +13,20 @@ XXX TODO
     \item Les mots clefs de définition de blocs : \alert<1->{if}, \alert<2->{while}, \alert<3->{for}, \alert<4->{def}, \alert<5->{class}, \alert<6->{with}
   \end{itemize}
 
+\end{frame}
+
+\subsection{Les instructions}
+\begin{frame}
+  \frametitle{Syntaxe - Les instructions}
+  \begin{itemize}
+    \item<1-> Au sein d'un bloc, on sépare généralement chaque instruction par un retour à la ligne.
+    \item<2-> La ligne suivante, si elle fait partie du même bloc, doit avoir la même indentation.
+    \item<3-> Il est aussi possible, bien que déconseillé, de mettre plusieurs instructions sur une ligne
+    \begin{itemize}
+      \item<4-> Il faut alors les séparer par ';'
+    \end{itemize}
+  \end{itemize}
+  \semiverbatim{séparateur d'instruction : ';' (éviter) ou '\\n'}
 \end{frame}
 
 \subsection{Les déclarations conditionnelles}
