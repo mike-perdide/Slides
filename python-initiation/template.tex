@@ -44,6 +44,16 @@
         stringstyle=\color[rgb]{0.627,0.126,0.941},}
 \setbeamercolor{terminal}{fg=white, bg=black}
   
+\AtBeginSection[]
+% this displays a title frame every time a new section begins.
+{
+  \begin{frame}
+    \begin{center}
+        \Large{\bf \insertsection}
+    \end{center}
+  \end{frame}
+}
+
   \input{introduction}
   
   \begin{frame}
