@@ -130,15 +130,45 @@ Examples de générateur :
   \end{itemize}
 \end{frame}
 
-\subsection{Les méthodes/functions}
+\subsection{Les méthodes/fonctions}
 \begin{frame}[fragile]
+  \frametitle{Syntaxe - Les méthodes/fonctions}
+  \begin{itemize}
+    \item En Python, la signature d'une méthode n'inclut pas le type retourné.
+    \item Les arguments passés peuvent être des paramètres ou des arguments nommés.
+    \item Le mot clef utilisé est {\bf def}.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Syntaxe de def}
+Avec des paramètres :
   \begin{lstlisting}
 def nom_de_methode(arg1, arg2, arg3):
     code ...
   \end{lstlisting}
-  \begin{semiverbatim}
-mot clef def
-  \end{semiverbatim}
+Avec des arguments nommés :
+  \begin{lstlisting}
+def nom_de_methode(arg1=True, arg2=3):
+    code ...
+  \end{lstlisting}
+Fonction variadique :
+  \begin{lstlisting}
+def nom_de_methode(*args, **kwargs):
+    code ...
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Fonctions - Valeur de retour}
+Pour que la fonction retourne une valeur, il faut utiliser le mot clef {\bf return}.
+  \begin{lstlisting}
+def nom_de_methode(arg1, arg2, arg3):
+    code ...
+    return value
+  \end{lstlisting}
+
+La signature n'incluant pas le type retourné, il est possible de retourner des types d'objets différents selon les contextes d'utilisation, mais dans la pratique c'est une mauvaise idée.
 \end{frame}
 
 \subsection{Les classes}
