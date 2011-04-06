@@ -191,12 +191,28 @@ La signature n'incluant pas le type retourné, il est possible de retourner des 
 
 \subsection{Les classes}
 \begin{frame}[fragile]
-  \begin{lstlisting}
-class nom_de_classe:
-    def __init__(self):
-        code...
+  \frametitle{Syntaxe - Les classes}
+  \begin{itemize}
+    \item<1-> Python, langage orienté objet, permet la définition de nouveaux types d'objets grâce au mot clef {\bf class}.
+    \item<2-> Les classes comportent une méthode \verb=__init__= ("constructeur").
+    \item<3-> Toutes les méthodes d'une classes prennent pour premier argument \verb=self= (par convention).
+    \begin{itemize}
+      \item<3-> \verb=self= est l'objet sur lequel est appelé la méthode.
+    \end{itemize}
+    \item<4-> Les classes peuvent dériver de classes parentes et hériter de leurs attributs.
+  \end{itemize}
+\end{frame}
 
-    def methode_1(self):
+\begin{frame}[fragile]
+  \frametitle{Syntaxe de class}
+  \begin{lstlisting}
+class nom_de_classe(classe_parente):
+    def __init__(self, arg1):
+        classe_parente.__init__(self)
+
+        self._attr1 = arg1
+
+    def methode_1(self, arg1):
         code...
   \end{lstlisting}
 \end{frame}
