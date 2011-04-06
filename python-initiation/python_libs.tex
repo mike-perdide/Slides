@@ -8,3 +8,34 @@
     \item<4-> {\bf threading}, pour les threads
   \end{itemize}
 \end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Syntaxe de import}
+  \begin{lstlisting}
+import subprocess
+
+subprocess.Popen(cmd)
+  \end{lstlisting}
+
+  \begin{lstlisting}
+from os.path import isfile
+
+isfile("/home/user/ipython/.ipythonrc")
+  \end{lstlisting}
+
+  \begin{lstlisting}
+from threading import Thread as custom_name
+
+class my_thread(custom_name):
+    ...
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Syntaxe de import}
+Il est aussi possible d'utiliser la syntaxe :
+  \begin{lstlisting}
+from PyQt4.QtGui import *
+  \end{lstlisting}
+Mais c'est déconseillé, car cela peuple le namespace de manière implicite.
+\end{frame}
