@@ -8,3 +8,6 @@ slides: $(src)
 
 once: $(src)
 	pdflatex template.tex
+
+clean:
+	rm *.aux *.log *.pdf *.nav *.out *.snm *.toc *.vrb
