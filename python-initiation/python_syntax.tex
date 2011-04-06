@@ -8,11 +8,29 @@
     \item Les blocs sont définis par:
     \begin{itemize}
       \item La ligne précédente commence par un mot clef, se termine par ':'
-      \item Leur niveau d'indentation.
+      \item Leur niveau d'indentation (par convention, 4 espaces par indentation)
     \end{itemize}
     \item Les mots clefs de définition de blocs : \alert<1->{if}, \alert<2->{while}, \alert<3->{for}, \alert<4->{def}, \alert<5->{class}, \alert<6->{with}
   \end{itemize}
+\end{frame}
 
+\begin{frame}[fragile]
+  \frametitle{Syntaxe - Les blocs, exemple}
+  \begin{lstlisting}
+import sys
+from PyQt4.QtGui import QApplication
+from gitbuster.main_window import MainWindow, \
+                         select_git_directory
+def main():
+    app = QApplication(sys.argv)
+    filepath = select_git_directory()
+    if filepath:
+        a = MainWindow(directory=filepath, debug=True)
+        a.show()
+        sys.exit(app.exec_())
+    else:
+        sys.exit(1)
+  \end{lstlisting}
 \end{frame}
 
 \subsection{Les instructions}
