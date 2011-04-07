@@ -10,6 +10,8 @@ How to make the snapshots:
     * Include the snapshot in your slide with :
         \includegraphics[scale=0.35]{snapshot.png}
 
+For ipython examples, use Feth's ipython wrappers in functions.tex.
+
 dependances for beamer and these docs on debian:
     * latex-beamer
     * texlive-fonts-recommended
