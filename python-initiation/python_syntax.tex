@@ -85,26 +85,26 @@ else:
     \item les comparaisons
   \end{itemize}
   \begin{ipython}
-    \ipinwrap{1}{0}{(1 == 2, 1 < 2, 2 < 1, 1 != 2)}
-    \ipouwrap{2}{0}{(False, True, False, True)}
-    \ipinwrap{3}{1}{my_str = "hello"}
-    \ipinwrap{4}{2}{(my_str == "hello", }
-    \ipincontwrp{4}{my_str > "helln",}
-    \ipincontwrp{4}{my_str < "hellq")}
-    \ipouwrap{5}{2}{(True, True, True)}
+    \ipinpt{(1 == 2, 1 < 2, 2 < 1, 1 != 2)}
+    \ipoutp{(False, True, False, True)}
+    \ipinpt{my_str = "hello"}
+    \ipinpt{(my_str == "hello",}
+    \ipcont{  my_str > "helln", }
+    \ipcont{  my_str < "hellq") }
+    \ipoutp{(True, True, True)}
   \end{ipython}
 \end{frame}
+
 
 \begin{frame}[fragile]
   \frametitle{Syntaxe - Les conditions}
   \begin{itemize}
     \item les opérateurs booléens
   \end{itemize}
-  \begin{beamercolorbox}{terminal}
-  \begin{semiverbatim}
- In [1]: not True and False or not False
- Out[1]: True\end{semiverbatim}
-  \end{beamercolorbox}
+  \begin{ipython}
+    \ipinpt{not True and False or not False}
+    \ipoutp{True}
+  \end{ipython}
 \end{frame}
 
 \begin{frame}[fragile]
@@ -112,13 +112,12 @@ else:
   \begin{itemize}
     \item par extension, certains objets vides sont équivalent à False
   \end{itemize}
-  \begin{beamercolorbox}{terminal}
-  \begin{semiverbatim}
- In [1]: my_str = ""
- In [1]: if not my_str:
-    ...:     print "False"
- False\end{semiverbatim}
-  \end{beamercolorbox}
+  \begin{ipython}
+    \ipinpt{my_str = ""}
+    \ipinpt{if not my_str:}
+    \ipcont{    print "False"}
+    \ipoutp{False}
+  \end{ipython}
 \end{frame}
 
 \subsection{Les boucles}
