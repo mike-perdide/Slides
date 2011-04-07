@@ -17,20 +17,33 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}
+\begin{frame}[fragile]
   \frametitle{Quelques types simples}
     \begin{itemize}
       \item les entiers
     \end{itemize}
-    \includegraphics[scale=0.35]{type_int.png}
+    \begin{ipython}
+      \ipinpt{my_int = 12}
+      \ipinpt{my_other_int = int("12")}
+      \ipinpt{my_int + 1}
+      \ipoutp{13}
+    \end{ipython}
 \end{frame}
 
-\begin{frame}
+\begin{frame}[fragile]
   \frametitle{Quelques types simples}
     \begin{itemize}
       \item les flottants
     \end{itemize}
-    \includegraphics[scale=0.35]{type_float.png}
+    \begin{ipython}
+      \ipinpt{my_float = 3.14}
+      \ipinpt{float(42)}
+      \ipoutp{42.0}
+      \ipinpt{type(2+3)}
+      \ipoutp{<type 'int'>}
+      \ipinpt{type(2+3.)}
+      \ipoutp{<type 'float'>}
+    \end{ipython}
 \end{frame}
 
 \begin{frame}
@@ -58,44 +71,83 @@
     \end{itemize}
 \end{frame}
 
-\begin{frame}
+\begin{frame}[fragile]
   \frametitle{Quelques structures de données}
     \begin{itemize}
       \item les chaînes de caractères
     \end{itemize}
-    \includegraphics[scale=0.35]{type_str.png}
+    \begin{ipython}
+      \ipinpt{my_str = "hello"}
+      \ipinpt{my_other_str = 'hello'}
+      \ipinpt{my_third_str = """My}
+      \ipcont{tailor is}
+      \ipcont{rich."""}
+      \ipinpt{my_last_str = str(42)}
+      \ipinpt{my_last_str + my_str}
+      \ipoutp{42hello}
+    \end{ipython}
 \end{frame}
 
-\begin{frame}
+\begin{frame}[fragile]
   \frametitle{Quelques structures de données}
     \begin{itemize}
       \item les tuples
     \end{itemize}
-    \includegraphics[scale=0.35]{type_tuple.png}
+    \begin{ipython}
+      \ipinpt{my\_tuple = (1, 2, "hello", "car", 1.5)}
+      \ipinpt{my\_other\_tuple = tuple("epsilon")}
+      \ipinpt{my\_other\_tuple}
+      \ipoutp{('e', 'p', 's', 'i', 'l', 'o', 'n')}
+    \end{ipython}
 \end{frame}
 
-\begin{frame}
+\begin{frame}[fragile]
   \frametitle{Quelques structures de données}
     \begin{itemize}
       \item les listes
     \end{itemize}
-    \includegraphics[scale=0.35]{type_list.png}
+    \begin{ipython}
+      \ipinpt{my\_str = "cardboard"}
+      \ipinpt{my\_list = [1, 50, my\_str, (2, 3, 4)]}
+      \ipinpt{my\_list.append(321)}
+      \ipoutp{[1, 50, 'cardboard', (2, 3, 4), 321]}
+    \end{ipython}
 \end{frame}
 
-\begin{frame}
+\begin{frame}[fragile]
   \frametitle{Quelques structures de données}
     \begin{itemize}
       \item les dictionnaires
     \end{itemize}
-    \includegraphics[scale=0.35]{type_dict.png}
+    \begin{ipython}
+      \ipinpt{my\_dict = \{"key1":"value1", }
+      \ipcont{           "key2":"value2"\}}
+      \ipinpt{my\_dict["key3"] = "value3"}
+      \ipinpt{my\_dict["key2"]}
+      \ipoutp{'value2'}
+      \ipinpt{my\_dict.keys()}
+      \ipoutp{['key3', 'key2', 'key1']}
+      \ipoutp{[1, 50, 'cardboard', (2, 3, 4), 321]}
+    \end{ipython}
 \end{frame}
 
-\begin{frame}
+\begin{frame}[fragile]
   \frametitle{Quelques structures de données}
     \begin{itemize}
       \item les sets
     \end{itemize}
-    \includegraphics[scale=0.35]{type_set.png}
+    \begin{ipython}
+      \ipinpt{my\_set = set(("blue", "green"))}
+      \ipinpt{my\_set.add("yellow")}
+      \ipinpt{my\_set}
+      \ipoutp{set(['blue', 'green', 'yellow'])}
+      \ipinpt{my\_set.add("yellow")}
+      \ipinpt{my\_set}
+      \ipoutp{set(['blue', 'green', 'yellow']])}
+      \ipinpt{my\_other\_set = set(("green", "rogen"))}
+      \ipinpt{my\_set.intersection(my\_other\_set)}
+      \ipoutp{set(['green'])}
+    \end{ipython}
 \end{frame}
 
 % 1.3 Quelques autres types courants (juste les évoquer)
