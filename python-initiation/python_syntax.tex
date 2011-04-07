@@ -1,11 +1,11 @@
-\section{La syntaxe de Python}
+\section{La grammaire de Python}
 
 \subsection{Les blocs de code}
 \begin{frame}[fragile]
-  \frametitle{Syntaxe - Les blocs de code, ou suites}
+  \frametitle{Les blocs de code, ou suites}
   \begin{description}
-  \item[L'indentation du code] est par convention un multiple de 4 espaces.
-  \item[Un bloc de code] est constitué de lignes de code dont le niveau d'indentation/d'imbrication est égal ou supérieur à celui de sa première ligne.
+  \item[L'indentation du code] est par convention un multiple de 4 espaces. \pause
+  \item[Un bloc de code] est constitué de lignes de code dont le niveau d'indentation/d'imbrication est égal ou supérieur à celui de sa première ligne. \pause
   \item[Des sous-blocs] sont donc éventuellement présents au sein d'un bloc de code, en tant que membres de déclarations composées.
   \end{description}
 \end{frame}
@@ -13,13 +13,13 @@
 \subsection{Les déclarations composées}
 \subsubsection{Définition}
 \begin{frame}[fragile]
-  \frametitle{Syntaxe - Les déclarations composées : définition}
+  \frametitle{Les déclarations composées : définition}
   \begin{description}
-  \item[Les déclarations composées] sont introduites par une déclaration elle-même composée
+  \item[Les déclarations composées] sont introduites par une déclaration elle-même composée \pause
   \begin{itemize}
-      \item d'un mot clef parmi «\hlcmd{if}», «\hlcmd{for}», «\hlcmd{def}»~\ldots
-      \item suivi par des paramètres
-      \item conclue par «\hlcmd{:}»
+      \item d'un mot clef parmi «\hlcmd{if}», «\hlcmd{for}», «\hlcmd{def}»~\ldots \pause
+      \item suivi par des paramètres \pause
+      \item conclue par «\hlcmd{:}» \pause
   \end{itemize}
   \item[Un ou plusieurs blocs d'instruction] sont contenus dans une déclaration composée.
   \end{description}
@@ -27,7 +27,7 @@
 
 \subsubsection{Exemple}
 \begin{frame}[fragile]
-  \frametitle{Syntaxe - Les déclarations composées : l'exemple de if}
+  \frametitle{Les déclarations composées : l'exemple de if}
   \emph{Le «\texttt{if}» tel que dans la grammaire:}\\
   \begin{beamercolorbox}{documentation}
   \small{\verb|if_stmt:|} \\
@@ -35,6 +35,7 @@
   \small{\verb|    ('elif' test ':' suite)*|} \\
   \small{\verb|    ['else' ':' suite]|}
   \end{beamercolorbox}
+  \pause
   \begin{lstlisting}
 if 2 + 2 == 5 :
     print "Voila",
@@ -50,7 +51,7 @@ else:
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{Syntaxe - Les déclarations composées : l'exemple de if}
+  \frametitle{Les déclarations composées : l'exemple de if}
   \begin{beamercolorbox}{terminal}
 \scriptsize\begin{verbatim}$ python
 Python 2.6.6 (r266:84292, Dec 26 2010, 22:31:48)
@@ -74,12 +75,12 @@ Un monde banal  et ennuyeux.
 
 \subsubsection{Liste brute}
 \begin{frame}[fragile]
-  \frametitle{Syntaxe - Les déclarations composées : liste}
+  \frametitle{Les déclarations composées : liste}
 Liste fournie pour référence, ne pas essayer de tout comprendre maintenant !
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{Syntaxe - Les déclarations composées : liste brute}
+  \frametitle{Les déclarations composées : liste brute}
 \begin{figure}
   \begin{beamercolorbox}{documentation}
 \scriptsize\begin{verbatim}
@@ -97,12 +98,13 @@ with_item: test ['as' expr]
 except_clause: 'except' [test [('as' | ',') test]]
 \end{verbatim}
   \end{beamercolorbox}
+\def\figurename{extrait de la grammaire de Python}
 \caption{http://docs.python.org/reference/grammar.html}
 \end{figure}
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{Syntaxe - Les déclarations composées : liste traduite}
+  \frametitle{Les déclarations composées : liste traduite}
 Soit grosso modo, en français
 \small\begin{tabular}{|l|l|l|}
 \hline
@@ -122,9 +124,9 @@ mot clef & rôle & suivi de / variante \\
 
 
 \begin{frame}[fragile]
-  \frametitle{Syntaxe - Les blocs ou suites : exemple complet}
-  \begin{lstlisting}
-import sys
+  \frametitle{Déclarations composées : exemple d'imbrication}
+\begin{figure}
+\tiny{\begin{lstlisting}import sys
 from PyQt4.QtGui import QApplication
 from gitbuster.main_window import MainWindow, \
                          select_git_directory
@@ -137,7 +139,10 @@ def main():
         sys.exit(app.exec_())
     else:
         sys.exit(1)
-  \end{lstlisting}
+  \end{lstlisting}}
+\def\figurename{Code source de gitbuster}
+\caption{https://github.com/mike-perdide/gitbuster}
+\end{figure}
 \end{frame}
 
 \subsection{Les instructions}
