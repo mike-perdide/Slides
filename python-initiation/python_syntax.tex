@@ -84,16 +84,15 @@ else:
   \begin{itemize}
     \item les comparaisons
   \end{itemize}
-  \begin{beamercolorbox}{terminal}
-  \begin{semiverbatim}
-\uncover<1->{ In [1]: (1 == 2, 1 < 2, 2 < 1, 1 != 2)}
-\uncover<1->{ Out[1]: (False, True, False, True)}
-
-\uncover<2>{ In [2]: my_str = "hello"}
-\uncover<2>{ In [2]: (my_str == "hello", my_str > "helln",
-    ...: my_str < "hellq")}
-\uncover<2>{ Out[2]: (True, True, True)}\end{semiverbatim}
-    \end{beamercolorbox}
+\begin{ipython}
+    \ipinwrap{1}{0}{(1 == 2, 1 < 2, 2 < 1, 1 != 2)}
+    \ipouwrap{2}{0}{(False, True, False, True)}
+    \ipinwrap{3}{1}{my_str = "hello"}
+    \ipinwrap{4}{2}{(my_str == "hello", }
+    \ipincontwrp{4}{my_str > "helln",}
+    \ipincontwrp{4}{my_str < "hellq")}
+    \ipouwrap{5}{2}{(True, True, True)}
+\end{ipython}
 \end{frame}
 
 \begin{frame}[fragile]
