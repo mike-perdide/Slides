@@ -1,49 +1,51 @@
-\newcommand\ipin[1]{
+\newcommand\ipythonin[1]{
     \textcolor{green}{
         In [#1]:
       }
 }
-\newcommand\ipout[1]{
+\newcommand\ipythonout[1]{
     \textcolor{red}{
       Out[#1]:
     }
 }
-\newcommand\ipincont{
+\newcommand\ipythoncont{
     \textcolor{green}{
       ~~~...:
     }
 }
-\newenvironment{ipython}{
+
+%\newcount\inpycount
+\newenvironment{ipython}
+{
 \fontfamily{cmtt}\selectfont
 \begin{beamercolorbox}{terminal}
 \begin{semiverbatim}
-\begin{tabular}{ll}
-%tildes are a dirty hack because I have a weird aligment on the first tabular line
-\uncover<0->{~~~~\$ ipython  & ~ \\}
-}{
-\end{tabular}
+\newcount \inpy
+\newcount \uncovercount
+\inpy=0
+\uncovercount=1
+
+\uncover<0->{  \$ ipython}}
+{
 \end{semiverbatim}
 \end{beamercolorbox}
 }
-\newcommand\ipprompt{
+
+%\newcommand\ipprompt{
+%}
+
+\newcommand\ipinpt[1]{
+    \advance \inpy by 1
+    \advance \uncovercount by 1
+    \uncover<\the\uncovercount->{\ipythonin{\the\inpy} $\texttt{#1}$}
 }
 
-\newcommand\ipinwrap[3]{
-    %first argument is slide from which this is displayed
-    %second argument is ipython counter
-    %third is the text content
-    \uncover<#1->{\ipin{#2}  & $\texttt{#3}$ \\}
-}
-
-\newcommand\ipouwrap[3]{
-    %see \ipinwrap
-    \uncover<#1->{\ipout{#2}  & $\texttt{#3}$ \\}
+\newcommand\ipoutp[1]{
+    \advance \uncovercount by 1
+    \uncover<\the\uncovercount->{\ipythonout{\the\inpy} $\texttt{#1}$}
 }
 
 
-\newcommand\ipincontwrp[2]{
-    %first argument is slide from which this is displayed
-    %second is the text content
-    %\uncover<#1->{\ipincont  \texttt{#2} \\}
-    \uncover<#1->{\ipincont  & $\texttt{#2}$ \\}
+\newcommand\ipcont[1]{
+    \uncover<\the\uncovercount->{\ipythoncont $\texttt{#1}$}
 }
