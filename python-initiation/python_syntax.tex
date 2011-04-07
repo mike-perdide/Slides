@@ -1,21 +1,128 @@
 \section{La syntaxe de Python}
 
-\subsection{Les blocs}
+\subsection{Les blocs de code}
 \begin{frame}[fragile]
-  \frametitle{Syntaxe - Les blocs}
+  \frametitle{Syntaxe - Les blocs de code, ou suites}
+  \begin{description}
+  \item[L'indentation du code] est par convention un multiple de 4 espaces.
+  \item[Un bloc de code] est constitué de lignes de code dont le niveau d'indentation/d'imbrication est égal ou supérieur à celui de sa première ligne.
+  \item[Des sous-blocs] sont donc éventuellement présents au sein d'un bloc de code, en tant que membres de déclarations composées.
+  \end{description}
+\end{frame}
+
+\subsection{Les déclarations composées}
+\subsubsection{Définition}
+\begin{frame}[fragile]
+  \frametitle{Syntaxe - Les déclarations composées : définition}
+  \begin{description}
+  \item[Les déclarations composées] sont introduites par une déclaration elle-même composée
   \begin{itemize}
-    \item En Python le code est regroupé en bloc.
-    \item Les blocs sont définis par:
-    \begin{itemize}
-      \item La ligne précédente commence par un mot clef, se termine par ':'
-      \item Leur niveau d'indentation (par convention, 4 espaces par indentation)
-    \end{itemize}
-    \item Les mots clefs de définition de blocs : \alert<1->{if}, \alert<2->{while}, \alert<3->{for}, \alert<4->{def}, \alert<5->{class}, \alert<6->{with}
+      \item d'un mot clef parmi «\hlcmd{if}», «\hlcmd{for}», «\hlcmd{def}»~\ldots
+      \item suivi par des paramètres
+      \item conclue par «\hlcmd{:}»
   \end{itemize}
+  \item[Un ou plusieurs blocs d'instruction] sont contenus dans une déclaration composée.
+  \end{description}
+\end{frame}
+
+\subsubsection{Exemple}
+\begin{frame}[fragile]
+  \frametitle{Syntaxe - Les déclarations composées : l'exemple de if}
+  \emph{Le «\texttt{if}» tel que dans la grammaire:}\\
+  \begin{beamercolorbox}{documentation}
+  \small{\verb|if_stmt:|} \\
+  \small{\verb|    'if' test ':' suite|} \\
+  \small{\verb|    ('elif' test ':' suite)*|} \\
+  \small{\verb|    ['else' ':' suite]|}
+  \end{beamercolorbox}
+  \begin{lstlisting}
+if 2 + 2 == 5 :
+    print "Voila",
+    print "de tres grandes valeurs de 2."
+elif 1 > 1:
+    print "1 s'est toujours cru ",
+    print "superieur."
+else:
+    print "Un monde banal ",
+    print "et ennuyeux."
+  \end{lstlisting}
+
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{Syntaxe - Les blocs, exemple}
+  \frametitle{Syntaxe - Les déclarations composées : l'exemple de if}
+  \begin{beamercolorbox}{terminal}
+\scriptsize\begin{verbatim}$ python
+Python 2.6.6 (r266:84292, Dec 26 2010, 22:31:48)
+[GCC 4.4.5] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> if 2 + 2 == 5 :
+...     print "Voila",
+...     print "de tres grandes valeurs de 2."
+... elif 1 > 1:
+...     print "1 s'est toujours cru ",
+...     print "superieur."
+... else:
+...     print "Un monde banal ",
+...     print "et ennuyeux."
+...
+Un monde banal  et ennuyeux.
+>>>
+\end{verbatim}
+  \end{beamercolorbox}
+\end{frame}
+
+\subsubsection{Liste brute}
+\begin{frame}[fragile]
+  \frametitle{Syntaxe - Les déclarations composées : liste}
+Liste fournie pour référence, ne pas essayer de tout comprendre maintenant !
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Syntaxe - Les déclarations composées : liste brute}
+\begin{figure}
+  \begin{beamercolorbox}{documentation}
+\scriptsize\begin{verbatim}
+if_stmt: 'if' test ':' suite ('elif' test ':' suite)* ['else' ':' suite]
+while_stmt: 'while' test ':' suite ['else' ':' suite]
+for_stmt: 'for' exprlist 'in' testlist ':' suite ['else' ':' suite]
+try_stmt: ('try' ':' suite
+           ((except_clause ':' suite)+
+            ['else' ':' suite]
+            ['finally' ':' suite] |
+           'finally' ':' suite))
+with_stmt: 'with' with_item (',' with_item)*  ':' suite
+with_item: test ['as' expr]
+# NB compile.c makes sure that the default except clause is last
+except_clause: 'except' [test [('as' | ',') test]]
+\end{verbatim}
+  \end{beamercolorbox}
+\caption{http://docs.python.org/reference/grammar.html}
+\end{figure}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Syntaxe - Les déclarations composées : liste traduite}
+Soit grosso modo, en français
+\small\begin{tabular}{|l|l|l|}
+\hline
+mot clef & rôle & suivi de / variante \\
+\hline \hline
+\texttt{if} & condition & suivi de \texttt{0..* elif}, \texttt{0..1 else}\\ \hline
+\texttt{while} & boucle "tant que" & suivi de \texttt{0..1 else}\\ \hline
+\texttt{for} & itération sur éléments & suivi de \texttt{0..1 else}\\ \hline
+\texttt{try} & fournit un mécanisme & suivi de \texttt{finally} \\
+ & de gestion des &  ou de \texttt{1..* except}, \\
+ & exceptions & \texttt{0..1 finally}, \texttt{0..1 else}\\ \hline
+\texttt{with} & définition de contexte & \\ \hline
+\texttt{def} & définition de fonction & variante décorée \\ \hline
+\texttt{class} & définition de classe & variante décorée \\ \hline
+\end{tabular}
+\end{frame}
+
+
+\begin{frame}[fragile]
+  \frametitle{Syntaxe - Les blocs ou suites : exemple complet}
   \begin{lstlisting}
 import sys
 from PyQt4.QtGui import QApplication
@@ -150,8 +257,9 @@ Examples de générateur :
   \frametitle{Syntaxe - Les méthodes/fonctions}
   \begin{itemize}
     \item En Python, la signature d'une méthode n'inclut pas le type retourné.
-    \item Les arguments passés peuvent être des paramètres ou des arguments nommés.
+    \item Les arguments passés peuvent être des paramètres et/ou des arguments nommés.
     \item Le mot clef utilisé est {\bf def}.
+    \item TODO: parler des scopes. cf http://www.network-theory.co.uk/docs/pytut/PythonScopesandNameSpaces.html
   \end{itemize}
 \end{frame}
 
