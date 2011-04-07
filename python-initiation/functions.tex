@@ -37,14 +37,13 @@
 \newcommand\ipinpt[1]{
     \advance \inpy by 1
     \advance \uncovercount by 1
-    \uncover<\the\uncovercount->{\ipythonin{\the\inpy} $\texttt{#1}$}
+    \uncover<\the\uncovercount->{\ipythonin{\the\inpy}$\texttt{#1}$}
 }
 
 \newcommand\ipoutp[1]{
     \advance \uncovercount by 1
-    \uncover<\the\uncovercount->{\ipythonout{\the\inpy} $\texttt{#1}$}
+    \uncover<\the\uncovercount->{\ipythonout{\the\inpy}$\texttt{#1}$}
 }
-
 
 \newcommand\ipcont[1]{
     \uncover<\the\uncovercount->{\ipythoncont $\texttt{#1}$}
