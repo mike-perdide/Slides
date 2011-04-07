@@ -13,3 +13,7 @@ How to make the snapshots:
 dependances for beamer and these docs on debian:
     * latex-beamer
     * texlive-fonts-recommended
+
+Indentation convention:
+    * add 2 spaces every time you use begin{}
+    * substract 2 spaces every time you use end()
