@@ -1,0 +1,49 @@
+\newcommand\ipin[1]{
+    \textcolor{green}{
+        In [#1]:
+      }
+}
+\newcommand\ipout[1]{
+    \textcolor{red}{
+      Out[#1]:
+    }
+}
+\newcommand\ipincont{
+    \textcolor{green}{
+      ~~~...:
+    }
+}
+\newenvironment{ipython}{
+\fontfamily{cmtt}\selectfont
+\begin{beamercolorbox}{terminal}
+\begin{semiverbatim}
+\begin{tabular}{ll}
+%tildes are a dirty hack because I have a weird aligment on the first tabular line
+\uncover<0->{~~~~\$ ipython  & ~ \\}
+}{
+\end{tabular}
+\end{semiverbatim}
+\end{beamercolorbox}
+}
+\newcommand\ipprompt{
+}
+
+\newcommand\ipinwrap[3]{
+    %first argument is slide from which this is displayed
+    %second argument is ipython counter
+    %third is the text content
+    \uncover<#1->{\ipin{#2}  & $\texttt{#3}$ \\}
+}
+
+\newcommand\ipouwrap[3]{
+    %see \ipinwrap
+    \uncover<#1->{\ipout{#2}  & $\texttt{#3}$ \\}
+}
+
+
+\newcommand\ipincontwrp[2]{
+    %first argument is slide from which this is displayed
+    %second is the text content
+    %\uncover<#1->{\ipincont  \texttt{#2} \\}
+    \uncover<#1->{\ipincont  & $\texttt{#2}$ \\}
+}
