@@ -10,4 +10,4 @@ once: $(src)
 	pdflatex template.tex
 
 clean:
-	rm *.aux *.log *.pdf *.nav *.out *.snm *.toc *.vrb
+	rm -f *.aux *.log *.pdf *.nav *.out *.snm *.toc *.vrb
