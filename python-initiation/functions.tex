@@ -8,14 +8,14 @@
     \textcolor{green}{~~~...:}
 }
 
-%\newcount\inpycount
+\newcount \inpy
+\newcount \uncovercount
+
 \newenvironment{ipython}
 {
 \fontfamily{cmtt}\selectfont
 \begin{beamercolorbox}{terminal}
 \begin{semiverbatim}
-\newcount \inpy
-\newcount \uncovercount
 \inpy=0
 \uncovercount=1
 \uncover<0->{\$ ipython}
