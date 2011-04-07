@@ -24,9 +24,11 @@
 \usepackage{relsize}
 \usepackage{verbatim}
 %\usepackage{hyperref}
+\usepackage{textcomp}
+
 
 % Use \beamertemplatenavigationsymbolsempty to remove the navigation symbols
-% from the PDF. No one needs them, they look weird, and they kind of reveal 
+% from the PDF. No one needs them, they look weird, and they kind of reveal
 % that you are using Beamer.
 \beamertemplatenavigationsymbolsempty
 
@@ -36,6 +38,7 @@
 
 \begin{document}
 
+\input{functions}
 %  \logo{\includegraphics[width=2cm]{ourLogo.png}}
 \lstset{language=Python, frame=single, columns=fixed,
         basicstyle=\small,
@@ -43,7 +46,7 @@
         commentstyle=\color[rgb]{0.133,0.545,0.133},
         stringstyle=\color[rgb]{0.627,0.126,0.941},}
 \setbeamercolor{terminal}{fg=white, bg=black}
-  
+
 \AtBeginSection[]
 % this displays a title frame every time a new section begins.
 {
@@ -55,12 +58,12 @@
 }
 
   \input{introduction}
-  
+
   \begin{frame}
     \frametitle*{Table des matières}
     \tableofcontents
   \end{frame}
-  
+
   \input{slides}
 
 \end{document}
