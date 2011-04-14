@@ -12,8 +12,9 @@
   \begin{itemize}
     \item<1-> les entiers
     \item<2-> les flottants
-    \item<3-> les booléens
-    \item<4-> la valeur 'Rien'
+    \item<3-> les complexes
+    \item<4-> les booléens
+    \item<5-> la valeur 'Rien'
   \end{itemize}
 \end{frame}
 
@@ -25,8 +26,8 @@
   \begin{ipython}
     \ipinpt{my_int = 12}
     \ipinpt{my_other_int = int("12")}
-    \ipinpt{my_int + 1}
-    \ipoutp{13}
+    \ipinpt{my_int + my_other_int}
+    \ipoutp{24}
   \end{ipython}
 \end{frame}
 
@@ -39,10 +40,26 @@
     \ipinpt{my_float = 3.14}
     \ipinpt{float(42)}
     \ipoutp{42.0}
-    \ipinpt{type(2+3)}
-    \ipoutp{<type 'int'>}
-    \ipinpt{type(2+3.)}
-    \ipoutp{<type 'float'>}
+    \ipinpt{2/5}
+    \ipoutp{0}
+    \ipinpt{2/5.0}
+    \ipoutp{0.40000000000000002}
+  \end{ipython}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Quelques types simples}
+  \begin{itemize}
+    \item les complexes
+  \end{itemize}
+  \begin{ipython}
+    \ipinpt{my_cplx = 5+2j}
+    \ipinpt{my_cplx.real}
+    \ipoutp{5.0}
+    \ipinpt{my_cplx.imag}
+    \ipoutp{2.0}
+    \ipinpt{my_cplx.conjugate()}
+    \ipoutp{(5-2j)}
   \end{ipython}
 \end{frame}
 
