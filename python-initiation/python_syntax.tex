@@ -1,5 +1,23 @@
 \section{La grammaire de Python}
 
+\subsection{Les variables}
+\begin{frame}[fragile]
+  \frametitle{Les variables}
+  \begin{itemize}
+  \item La déclaration d'une variable est implicite
+  \item Le typage en python est automatique
+  \end{itemize}
+  \begin{ipython}
+  \ipinpt{x = 2}
+  \ipinpt{type(x)}
+  \ipoutp{print <type 'int'>}
+  \ipinpt{x = "x est désormais une string"}
+  \ipinpt{print type(x)}
+  \ipoutp{<type 'str'>}
+  \end{ipython}
+\end{frame}
+
+
 \subsection{Les blocs de code}
 \begin{frame}[fragile]
   \frametitle{Les blocs de code, ou suites}
@@ -35,42 +53,23 @@
   \small{\verb|    ('elif' test ':' suite)*|} \\
   \small{\verb|    ['else' ':' suite]|}
   \end{beamercolorbox}
-  \pause
-  \begin{lstlisting}
-if 2 + 2 == 5 :
-    print "Voila",
-    print "de tres grandes valeurs de 2."
-elif 1 > 1:
-    print "1 s'est toujours cru ",
-    print "superieur."
-else:
-    print "Un monde banal ",
-    print "et ennuyeux."
-  \end{lstlisting}
-
 \end{frame}
 
 \begin{frame}[fragile]
   \frametitle{Les instructions composées : l'exemple de if}
-  \begin{beamercolorbox}{terminal}
-\scriptsize\begin{verbatim}$ python
-Python 2.6.6 (r266:84292, Dec 26 2010, 22:31:48)
-[GCC 4.4.5] on linux2
-Type "help", "copyright", "credits" or "license" for more information.
->>> if 2 + 2 == 5 :
-...     print "Voila",
-...     print "de tres grandes valeurs de 2."
-... elif 1 > 1:
-...     print "1 s'est toujours cru ",
-...     print "superieur."
-... else:
-...     print "Un monde banal ",
-...     print "et ennuyeux."
-...
-Un monde banal  et ennuyeux.
->>>
-\end{verbatim}
-  \end{beamercolorbox}
+  \begin{ipython}
+  \ipinpt{if 2 + 2 == 5 :}
+  \ipcont{    print "2 est grand"}
+  \ipcont{elif 1 > 1:}
+  \ipcont{    print "1 s'est toujours",}
+  \ipcont{    print "cru supérieur."}
+  \ipcont{else:}
+  \ipcont{    print "Un monde banal",}
+  \ipcont{    print "et ennuyeux. "}
+  \ipcont{...}
+  \ipcont{...}
+  \ipoutp{Un monde banal et ennuyeux.}
+  \end{ipython}
 \end{frame}
 
 \subsubsection{Liste brute}
