@@ -1,0 +1,65 @@
+\section{Utiliser Python}
+
+\subsection{Éxécution depuis un fichier}
+\begin{frame}[fragile]
+  \frametitle{Éxécution depuis un fichier}
+  \begin{itemize}
+  \item La déclaration de l'encodage
+  \begin{lstlisting}
+#-*-coding:utf-8-*-
+  \end{lstlisting}
+  \pause
+  \item Les imports de module
+  \begin{lstlisting}
+import os
+from sys import path
+  \end{lstlisting}
+  \end{itemize}
+\end{frame}
+
+\subsection{Script}
+\begin{frame}[fragile]
+  \frametitle{Script}
+  \begin{itemize}
+  \item Un test sur l'attribut \verb=__name__=  permet de transformer notre module en programme
+  \begin{lstlisting}
+if __name__ == '__main__':
+    print("Programme de test pour mon module")
+  \end{lstlisting}
+  \pause
+  \item Éxécution depuis un terminal
+  \begin{beamercolorbox}{terminal}
+\scriptsize\begin{verbatim}$ python monfichier.py
+Programme de test pour mon module
+$
+\end{verbatim}
+\end{beamercolorbox}
+\end{itemize}
+\end{frame}
+
+\subsection{Import de mon module}
+\begin{frame}[fragile]
+  \frametitle{Import de mon module}
+    \begin{itemize}
+      \item Le fichier \verb=__init__.py= est nécessaire pour identifier le répertoire courant comme un package python
+      \begin{lstlisting}
+~/mypackage/__init__.py
+~/mypackage/example.py
+      \end{lstlisting}
+      \pause
+      \item Le package doit être dans le {\bf PYTHONPATH} pour pouvoir être importé
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Import de mon module}
+\begin{ipython}
+\ipinpt{from sys import path}
+\ipinpt{print path}
+\ipoutp{['', '/usr/bin', '/usr/local/lib/python2.6/dist-packages', ...]}
+\ipinpt{sys.path.append('/home/user/')}
+\ipinpt{from mypackage import example}
+\ipinpt{print example}
+\ipoutp{<module 'mypackage.example' from '/home/user/mypackage/example.py'>}
+\end{ipython}
+\end{frame}
