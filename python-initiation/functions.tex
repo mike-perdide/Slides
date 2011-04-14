@@ -13,7 +13,8 @@
 
 \newenvironment{ipython}
 {
-\fontfamily{cmtt}\selectfont
+\fontfamily{cmtt}
+\selectfont
 \begin{beamercolorbox}{terminal}
 \begin{semiverbatim}
 \inpy=0
@@ -45,4 +46,7 @@
 
 \newcommand\hlcmd[1]{
 \texttt{\em{#1}}
+}
+\newcommand\ipwrapp[1]{
+\uncover<\the\uncovercount->{$\texttt{#1}$}
 }
