@@ -1,10 +1,13 @@
-src = template.tex
+src=$(wildcard *.tex)
 
-all: slides
+all: template.pdf
 
-slides: $(src)
-	pdflatex template.tex
-	pdflatex template.tex
+show: template.pdf
+	see template.pdf
+
+template.pdf: $(src)
+	pdflatex template.tex -draftmode -halt-on-error -interaction batchmode
+	pdflatex template.tex -halt-on-error -interaction batchmode
 
 once: $(src)
 	pdflatex template.tex
