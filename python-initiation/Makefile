@@ -26,8 +26,8 @@ distclean:
 clean-recursive:
 	for dir in $(wildcard *); do if [ -d $$dir ] && [ -f $$dir/Makefile ]; then cd $$dir; $(MAKE) clean; cd ..; fi; done
 
-%.pdf: %.tex
-	pdflatex $<
+%.pdf: $(TEXFILES)
+	pdflatex template.tex
 	egrep -c $(RERUNBIB) $*.log && (bibtex $*;pdflatex $<); true
 	egrep $(RERUN) $*.log && (pdflatex $<) ; true
 	egrep $(RERUN) $*.log && (pdflatex $<) ; true
