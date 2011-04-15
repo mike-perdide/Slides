@@ -2,21 +2,49 @@
 
 \subsection{Les variables}
 \begin{frame}[fragile]
-  \frametitle{Les variables}
-  \begin{itemize}
-  \item La déclaration d'une variable est implicite
-  \item Le typage en python est automatique
-  \end{itemize}
-  \begin{ipython}
-  \ipinpt{x = 2}
-  \ipinpt{type(x)}
-  \ipoutp{print <type 'int'>}
-  \ipinpt{x = "x est désormais une string"}
-  \ipinpt{print type(x)}
-  \ipoutp{<type 'str'>}
-  \end{ipython}
+\frametitle{Les variables}
+\begin{itemize}
+\item La déclaration d'une variable est implicite
+\item Le typage en python est automatique
+\end{itemize}
+\pause
+\begin{ipython}
+\ipinpt{x = 2}
+\ipinpt{type(x)}
+\ipoutp{print <type 'int'>}
+\ipinpt{x = "x est désormais une string"}
+\ipinpt{print type(x)}
+\ipoutp{<type 'str'>}
+\end{ipython}
 \end{frame}
 
+\begin{frame}[fragile]
+\frametitle{Les variables sont des références}
+\begin{itemize}
+\item Une variable est une référence à un objet
+\item Plusieurs variables peuvent référencer le même objet
+\end{itemize}
+\pause
+\begin{ipython}
+\ipinpt{x = ["un","deux","trois"]}
+\ipinpt{y = x}
+\ipinpt{y.append('quatre')}
+\ipinpt{print y}
+\ipoutp{['un', 'deux', 'trois', 'quatre']}
+\ipinpt{print x}
+\ipoutp{['un', 'deux', 'trois', 'quatre']}
+\end{ipython}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Nommer les variables}
+Comment nommer une variable
+\begin{itemize}
+\item Utiliser les caractères alphabétiques minuscules ou majuscules ((a à z) ou (A à Z)) ainsi que '\verb=_=' (tiret-bas)
+\item Ne pas utiliser les mots réservés
+\item A noter : L'usage de '\verb=_=' en début du nom de variable impliqe des comportements particuliers
+\end{itemize}
+\end{frame}
 
 \subsection{Les blocs de code}
 \begin{frame}[fragile]
