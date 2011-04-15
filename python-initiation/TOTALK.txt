@@ -1,3 +1,6 @@
 talk about...
 
 -slices
+-nombres complexes
+-.pyw pour éviter la fenetre MSDOS sous windows
+
