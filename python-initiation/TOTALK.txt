@@ -4,3 +4,8 @@ talk about...
 -nombres complexes
 -.pyw pour éviter la fenetre MSDOS sous windows
 
+notes wip feth:
+Analogie machine à écrire clavier ordinateur -> les deux servent à communiquer.
+comparaison ASM vs Python : Python sert à communiquer à la fois avec les devs (y compris moi dans le futur) et avec la machine.
+
+
