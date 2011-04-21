@@ -23,12 +23,12 @@
   \begin{itemize}
     \item les entiers
   \end{itemize}
-  \begin{ipython}
-    \ipinpt{my_int = 12}
-    \ipinpt{my_other_int = int("12")}
-    \ipinpt{my_int + my_other_int}
-    \ipoutp{24}
-  \end{ipython}
+\begin{ipython}
+\ipinpt{my_int = 12}
+\ipinpt{my_other_int = int("12")}
+\ipinpt{my_int + my_other_int}
+\ipoutp{24}
+\end{ipython}
 \end{frame}
 
 \begin{frame}[fragile]
@@ -36,15 +36,15 @@
   \begin{itemize}
     \item les flottants
   \end{itemize}
-  \begin{ipython}
-    \ipinpt{my_float = 3.14}
-    \ipinpt{print float(42)}
-    \ipoutp{42.0}
-    \ipinpt{print 2/5}
-    \ipoutp{0}
-    \ipinpt{print 2/5.0}
-    \ipoutp{0.40000000000000002}
-  \end{ipython}
+\begin{ipython}
+\ipinpt{my_float = 3.14}
+\ipinpt{print float(42)}
+\ipoutp{42.0}
+\ipinpt{print 2/5}
+\ipoutp{0}
+\ipinpt{print 2/5.0}
+\ipoutp{0.40000000000000002}
+\end{ipython}
 \end{frame}
 
 \begin{frame}[fragile]
@@ -52,25 +52,33 @@
   \begin{itemize}
     \item les complexes
   \end{itemize}
-  \begin{ipython}
-    \ipinpt{my_cplx = 5+2j}
-    \ipinpt{my_cplx.real}
-    \ipoutp{5.0}
-    \ipinpt{my_cplx.imag}
-    \ipoutp{2.0}
-    \ipinpt{my_cplx.conjugate()}
-    \ipoutp{(5-2j)}
-    \ipinpt{abs(my_cplx)}
-    \ipoutp{5.3851648071345037}
-  \end{ipython}
+\begin{ipython}
+\ipinpt{my_cplx = 5+2j}
+\ipinpt{my_cplx.real}
+\ipoutp{5.0}
+\ipinpt{my_cplx.imag}
+\ipoutp{2.0}
+\ipinpt{my_cplx.conjugate()}
+\ipoutp{(5-2j)}
+\ipinpt{abs(my_cplx)}
+\ipoutp{5.3851648071345037}
+\end{ipython}
 \end{frame}
 
-\begin{frame}
+\begin{frame}[fragile]
   \frametitle{Quelques types simples}
-    \begin{itemize}
-      \item les booléens : \alert{True, False}
-      \item la valeur 'Rien' : \alert{None}
-    \end{itemize}
+  \begin{itemize}
+    \item les booléens : \alert{True, False}
+    \item la valeur 'Rien' : \alert{None}
+  \end{itemize}
+\begin{ipython}
+\ipinpt{print True | False}
+\ipoutp{True}
+\ipinpt{print True and False}
+\ipoutp{False}
+\ipinpt{print type(None)}
+\ipoutp{<type 'NoneType'>}
+\end{ipython}
 \end{frame}
 
 % 1.2 Quelques structures de données
@@ -95,16 +103,30 @@
   \begin{itemize}
     \item les chaînes de caractères
   \end{itemize}
-  \begin{ipython}
-    \ipinpt{my_str = "hello"}
-    \ipinpt{my_other_str = 'hello'}
-    \ipinpt{my_third_str = """My}
-    \ipcont{tailor is}
-    \ipcont{rich."""}
-    \ipinpt{my_last_str = str(42)}
-    \ipinpt{my_last_str + my_str}
-    \ipoutp{42hello}
-  \end{ipython}
+\begin{ipython}
+\ipinpt{my_str = "hello"}
+\ipinpt{my_other_str = 'hello'}
+\ipinpt{my_third_str = """My}
+\ipcont{tailor is}
+\ipcont{rich."""}
+\ipinpt{my_last_str = str(42)}
+\ipinpt{my_last_str + my_str}
+\ipoutp{42hello}
+\end{ipython}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Quelques structures de données}
+    \begin{itemize}
+    \item manipulation de chaîne de caractères
+    \end{itemize}
+\begin{ipython}
+\ipinpt{a = "une string"}
+\ipinpt{print(a[1])}
+\ipoutp{n}
+\ipinpt{print a.upper()}
+\ipoutp{UNE STRING}
+\end{ipython}
 \end{frame}
 
 \begin{frame}[fragile]
@@ -112,12 +134,12 @@
     \begin{itemize}
       \item les tuples
     \end{itemize}
-    \begin{ipython}
-      \ipinpt{my\_tuple = (1, 2, "hello", "car", 1.5)}
-      \ipinpt{my\_other\_tuple = tuple("epsilon")}
-      \ipinpt{my\_other\_tuple}
-      \ipoutp{('e', 'p', 's', 'i', 'l', 'o', 'n')}
-    \end{ipython}
+\begin{ipython}
+\ipinpt{my\_tuple = (1, 2, "hello", "car", 1.5)}
+\ipinpt{my\_other\_tuple = tuple("epsilon")}
+\ipinpt{my\_other\_tuple}
+\ipoutp{('e', 'p', 's', 'i', 'l', 'o', 'n')}
+\end{ipython}
 \end{frame}
 
 \begin{frame}[fragile]
