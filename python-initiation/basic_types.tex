@@ -3,9 +3,10 @@
 % 1 Les types de base Python
 % 1.1 Quelques types simples
 %     - entiers
-%     - flottants
-%     - True, False
-%     - None
+%     - les réels (flottants)
+%     - les complexes
+%     - les booléens (True, False)
+%     - le type None
 
 \begin{frame}
   \frametitle{Quelques types simples}
@@ -82,7 +83,7 @@
 \end{frame}
 
 % 1.2 Quelques structures de données
-%     - les chaines de caractère sont des séquences comme les autres
+%     - les chaines de caractère sont des séquences comme les autres mais sont différentes dans la tête des gens
 %     - séquence: list modifiable, tuple non modifiable, queue...
 %     - dictionnaire
 %     - ensemble (partie gauche d'un dict): set modifiable, frozenset non modifiable
@@ -92,10 +93,26 @@
   \frametitle{Quelques structures de données}
   \begin{itemize}
     \item<1-> les chaînes de caractère, un cas particulier de séquence
-    \item<2-> les autres séquences : tuples, listes, queue, \ldots
+    \item<2-> les autres séquences : tuples, listes \ldots
     \item<3-> les dictionnaires
     \item<4-> les sets, frozenset
   \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Quelques structures de données}
+\begin{itemize}
+\item Généralités sur les séquences (liste, tuple, chaînes)
+\end{itemize}
+\begin{ipython}
+\ipinpt{sequence = [1,2,3,4] \#liste pour exemple}
+\ipinpt{print sequence[1]}
+\ipoutp{2}
+\ipinpt{print sequence[:3]}
+\ipoutp{[1,2,3]}
+\ipinpt{print sequence[-1]}
+\ipoutp{4}
+\end{ipython}
 \end{frame}
 
 \begin{frame}[fragile]
@@ -104,13 +121,13 @@
     \item les chaînes de caractères
   \end{itemize}
 \begin{ipython}
-\ipinpt{my_str = "hello"}
-\ipinpt{my_other_str = 'hello'}
-\ipinpt{my_third_str = """My}
+\ipinpt{my\_str = "hello"}
+\ipinpt{my\_other\_str = 'hello'}
+\ipinpt{my\_third\_str = """My}
 \ipcont{tailor is}
 \ipcont{rich."""}
-\ipinpt{my_last_str = str(42)}
-\ipinpt{my_last_str + my_str}
+\ipinpt{my\_last\_str = str(42)}
+\ipinpt{my\_last\_str + my\_str}
 \ipoutp{42hello}
 \end{ipython}
 \end{frame}
@@ -122,23 +139,10 @@
     \end{itemize}
 \begin{ipython}
 \ipinpt{a = "une string"}
-\ipinpt{print(a[1])}
-\ipoutp{n}
+\ipinpt{print(a.split(' '))}
+\ipoutp{['une', 'string']}
 \ipinpt{print a.upper()}
 \ipoutp{UNE STRING}
-\end{ipython}
-\end{frame}
-
-\begin{frame}[fragile]
-  \frametitle{Quelques structures de données}
-    \begin{itemize}
-      \item les tuples
-    \end{itemize}
-\begin{ipython}
-\ipinpt{my\_tuple = (1, 2, "hello", "car", 1.5)}
-\ipinpt{my\_other\_tuple = tuple("epsilon")}
-\ipinpt{my\_other\_tuple}
-\ipoutp{('e', 'p', 's', 'i', 'l', 'o', 'n')}
 \end{ipython}
 \end{frame}
 
@@ -148,45 +152,74 @@
     \item les listes
   \end{itemize}
   \begin{ipython}
-    \ipinpt{my\_str = "cardboard"}
-    \ipinpt{my\_list = [1, 50, my\_str, (2, 3, 4)]}
-    \ipinpt{my\_list.append(321)}
-    \ipoutp{[1, 50, 'cardboard', (2, 3, 4), 321]}
+\ipinpt{my\_str = "cardboard"}
+\ipinpt{my\_list = [1, my\_str, (2, 3, 4)]}
+\ipinpt{my\_list.append(321)}
+\ipinpt{print my\_list}
+\ipoutp{[1, 'cardboard', (2, 3, 4), 321]}
+\ipinpt{my\_list.extend([2,3])}
+\ipinpt{print my\_list}
+\ipoutp{[1, 'cardboard', (2, 3, 4), 321, 2, 3]}
+  \end{ipython}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Quelques structures de données}
+    \begin{itemize}
+      \item les tuples (séquences non éditables)
+    \end{itemize}
+\begin{ipython}
+\ipinpt{my\_tuple = (1, 1, "hello", 1, 1.5)}
+\ipinpt{print my\_tuple.count(1)}
+\ipoutp{3}
+\ipinpt{my\_other\_tuple = tuple("epsilon")}
+\ipinpt{my\_other\_tuple}
+\ipoutp{('e', 'p', 's', 'i', 'l', 'o', 'n')}
+\end{ipython}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Quelques structures de données}
+  \begin{itemize}
+    \item les dictionnaires (tableaux associatifs)
+  \end{itemize}
+  \begin{ipython}
+\ipinpt{my\_dict = \{"key1":"value1", }
+\ipcont{           "key2":"value2"\}}
+\ipinpt{my\_dict["key3"] = "value3"}
+\ipinpt{my\_dict["key2"]}
+\ipoutp{'value2'}
+\ipinpt{my\_dict.keys()}
+\ipoutp{['key3', 'key2', 'key1']}
+\ipinpt{my\_dict.items()}
+\ipoutp{[('key3', 'value3'), ('key2', 'value2'),}
+\ipwrapp{('key1', 'value1')]}
   \end{ipython}
 \end{frame}
 
 \begin{frame}[fragile]
   \frametitle{Quelques structures de données}
   \begin{itemize}
-    \item les dictionnaires
+    \item Les sets assurent l'unicité de leurs éléments
+    \item Les sets permettent des opérations ensemblistes (union, différence symétrique)
+    \item Seuls des éléments 'hashable' peuvent être insérés dans les sets
+    \item Les frozensets sont aux sets ce que le tuple est au liste (non éditable)
   \end{itemize}
-  \begin{ipython}
-    \ipinpt{my\_dict = \{"key1":"value1", }
-    \ipcont{           "key2":"value2"\}}
-    \ipinpt{my\_dict["key3"] = "value3"}
-    \ipinpt{my\_dict["key2"]}
-    \ipoutp{'value2'}
-    \ipinpt{my\_dict.keys()}
-    \ipoutp{['key3', 'key2', 'key1']}
-  \end{ipython}
 \end{frame}
 
 \begin{frame}[fragile]
   \frametitle{Quelques structures de données}
-  \begin{itemize}
-    \item les sets
-  \end{itemize}
   \begin{ipython}
-    \ipinpt{my\_set = set(("blue", "green"))}
-    \ipinpt{my\_set.add("yellow")}
-    \ipinpt{my\_set}
-    \ipoutp{set(['blue', 'green', 'yellow'])}
-    \ipinpt{my\_set.add("yellow")}
-    \ipinpt{my\_set}
-    \ipoutp{set(['blue', 'green', 'yellow']])}
-    \ipinpt{my\_other\_set = set(("green", "rogen"))}
-    \ipinpt{my\_set.intersection(my\_other\_set)}
-    \ipoutp{set(['green'])}
+\ipinpt{my\_set = set(["blue", "green", "green"])}
+\ipinpt{my\_set.add("yellow")}
+\ipinpt{my\_set}
+\ipoutp{set(['blue', 'green', 'yellow'])}
+\ipinpt{my\_set.add("yellow")}
+\ipinpt{my\_set}
+\ipoutp{set(['blue', 'green', 'yellow']])}
+\ipinpt{my\_other\_set = set(("green", "rogen"))}
+\ipinpt{my\_set.intersection(my\_other\_set)}
+\ipoutp{set(['green'])}
   \end{ipython}
 \end{frame}
 
