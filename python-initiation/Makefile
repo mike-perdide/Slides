@@ -11,23 +11,29 @@ TEXFILES=$(wildcard *.tex)
 RERUN = "(There were undefined references|Rerun to get (cross-references|the bars) right|Table widths have changed. Rerun LaTeX.|Linenumber reference failed)"
 RERUNBIB = "No file.*\.bbl|Citation.*undefined"
 
-all: template.pdf
+all: diapo.template.pdf support.template.pdf
 
-show: template.pdf
-	see template.pdf
+show: diapo.template.pdf support.template.pdf
+	see diapo.template.pdf and support.template.pdf
 
 clean: clean-recursive
-	rm -f *.aux *.log *.bbl *.blg *.brf *.cb *.ind *.idx *.ilg  \
+	rm -f *.aux *.log *.bbl *.blg *.brf *.cb *.ind *.idx *.ilg *.nav *.snm *.vrb \
           *.inx *.ps *.dvi *.toc *.out *.lot *~ *.lof *.ttt *.fff
 
 distclean:
-	rm -f template.pdf
+	rm -f diapo.template.pdf, support.template.pdf
 
 clean-recursive:
 	for dir in $(wildcard *); do if [ -d $$dir ] && [ -f $$dir/Makefile ]; then cd $$dir; $(MAKE) clean; cd ..; fi; done
 
-%.pdf: $(TEXFILES)
-	pdflatex template.tex
+diapo.template.pdf: diapo.template.tex
+	pdflatex diapo.template.tex
+	egrep -c $(RERUNBIB) $*.log && (bibtex $*;pdflatex $<); true
+	egrep $(RERUN) $*.log && (pdflatex $<) ; true
+	egrep $(RERUN) $*.log && (pdflatex $<) ; true
+
+support.template.pdf: support.template.tex
+	pdflatex support.template.tex
 	egrep -c $(RERUNBIB) $*.log && (bibtex $*;pdflatex $<); true
 	egrep $(RERUN) $*.log && (pdflatex $<) ; true
 	egrep $(RERUN) $*.log && (pdflatex $<) ; true

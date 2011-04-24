@@ -1,5 +1,6 @@
+%documentclass is initialized in respective render type
+%\documentclass[xcolor*pst]{beamer}
 
-\documentclass[xcolor*pst]{beamer}
 \usetheme{Warsaw}
 % Madrid: titre de la diapo en header, nom de la boîte, date et page en footer
 % Berlin: liste des sections en header, nom de la boîte en footer
@@ -31,7 +32,7 @@
 % Use \beamertemplatenavigationsymbolsempty to remove the navigation symbols
 % from the PDF. No one needs them, they look weird, and they kind of reveal
 % that you are using Beamer.
-\beamertemplatenavigationsymbolsempty
+\mode<presentation>{\beamertemplatenavigationsymbolsempty}
 
 \title{}
 \author{}
