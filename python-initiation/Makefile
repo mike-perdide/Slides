@@ -6,7 +6,7 @@
 #
 # simplified for our slides (majerti 2011)
 
-TEXFILES=$(wildcard *.tex)
+TEXFILES=$(wildcard *.tex */*.tex)
 
 RERUN = "(There were undefined references|Rerun to get (cross-references|the bars) right|Table widths have changed. Rerun LaTeX.|Linenumber reference failed)"
 RERUNBIB = "No file.*\.bbl|Citation.*undefined"
@@ -26,15 +26,15 @@ distclean:
 clean-recursive:
 	for dir in $(wildcard *); do if [ -d $$dir ] && [ -f $$dir/Makefile ]; then cd $$dir; $(MAKE) clean; cd ..; fi; done
 
-diapo.template.pdf: diapo.template.tex
+diapo.template.pdf: $(TEXFILES)
 	pdflatex diapo.template.tex
-	egrep -c $(RERUNBIB) $*.log && (bibtex $*;pdflatex $<); true
-	egrep $(RERUN) $*.log && (pdflatex $<) ; true
-	egrep $(RERUN) $*.log && (pdflatex $<) ; true
+	egrep -c $(RERUNBIB) $.log && (bibtex $;pdflatex $<); true
+	egrep $(RERUN) $.log && (pdflatex $<) ; true
+	egrep $(RERUN) $.log && (pdflatex $<) ; true
 
-support.template.pdf: support.template.tex
+support.template.pdf: $(TEXFILES)
 	pdflatex support.template.tex
-	egrep -c $(RERUNBIB) $*.log && (bibtex $*;pdflatex $<); true
-	egrep $(RERUN) $*.log && (pdflatex $<) ; true
-	egrep $(RERUN) $*.log && (pdflatex $<) ; true
+	egrep -c $(RERUNBIB) $.log && (bibtex $;pdflatex $<); true
+	egrep $(RERUN) $.log && (pdflatex $<) ; true
+	egrep $(RERUN) $.log && (pdflatex $<) ; true
 
