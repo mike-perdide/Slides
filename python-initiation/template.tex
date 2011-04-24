@@ -34,43 +34,91 @@
 % that you are using Beamer.
 \mode<presentation>{\beamertemplatenavigationsymbolsempty}
 
-\title{}
-\author{}
-\institute{Majerti}
+\def\client{Nom du client}
+\def\formateur{Prenom \textsc{NOM}}
+\def\auteur{majerti}
+\title{Python-Initiation}
+\author{\auteur}
+\institute{\client}
 
 \begin{document}
 
 \input{functions}
 %  \logo{\includegraphics[width=2cm]{ourLogo.png}}
 \lstset{language=Python, frame=single, columns=fixed,
-        basicstyle=\small,
-        keywordstyle=\color[rgb]{0,0,1},
-        commentstyle=\color[rgb]{0.133,0.545,0.133},
-        stringstyle=\color[rgb]{0.627,0.126,0.941},}
-\setbeamercolor{terminal}{fg=white, bg=black}
+  basicstyle=\small,
+  keywordstyle=\color[rgb]{0,0,1},
+  commentstyle=\color[rgb]{0.133,0.545,0.133},
+  stringstyle=\color[rgb]{0.627,0.126,0.941},}
+  \setbeamercolor{terminal}{fg=white, bg=black}
 
-\definecolor{sand}{HTML}{EEFFCC}
-\setbeamercolor{documentation}{fg=black, bg=sand}
+  \definecolor{sand}{HTML}{EEFFCC}
+  \setbeamercolor{documentation}{fg=black, bg=sand}
 
-\AtBeginSection[]
-% this displays a title frame every time a new section begins.
+  \AtBeginSection[]
+  % this displays a title frame every time a new section begins.
 {
+  \vspace{10cm}
   \begin{frame}
-    \begin{center}
-        \Large{\bf \insertsection}
-    \end{center}
+  \begin{center}
+  \Large{\bf \insertsection}
+  \end{center}
   \end{frame}
 }
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 
-  \input{sections/introduction}
+\begin{frame}
+  %\mode<article>{
+    \begin{titlepage}
+      \begin{center}
+    %  \includegraphics[width=0.15\textwidth]{./medias/logo_majerti.png}\\[1cm]
+        \mode<article>{
+             \vspace*{\stretch{1}}
 
-  \begin{frame}
-    \frametitle{Table des matières}
-    \setcounter{tocdepth}{1}
-    \tableofcontents
+             \textsc{\LARGE \client}
+
+             \vspace*{\stretch{1}}
+
+             \HRule
+             \vspace{1cm}
+             { \huge \bfseries Python-initiation}
+             \vspace{1cm}
+             \HRule
+             \vspace*{\stretch{1}}
+             % Author and supervisor
+             \begin{minipage}{0.4\textwidth}
+               \begin{flushleft} \large
+               \emph{Auteur:}\\
+                 \auteur
+               \end{flushleft}
+              \end{minipage}
+              \begin{minipage}{0.4\textwidth}
+                \begin{flushright} \large
+                  \emph{Formateur:}
+                    \formateur
+                \end{flushright}
+              \end{minipage}
+              \vfill
+              % Bottom of the page
+              {\large \today}
+           }
+        \end{center}
+      \end{titlepage}
+   %   }
   \end{frame}
-  \newpage
+      \newpage
 
-  \input{slides}
 
-\end{document}
+      \begin{frame}
+      \frametitle{Table des matières}
+      \setcounter{tocdepth}{1}
+      \tableofcontents
+      \end{frame}
+      \newpage
+
+      \input{sections/introduction}
+
+
+      \input{slides}
+
+      \end{document}
