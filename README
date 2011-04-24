@@ -15,6 +15,7 @@ For ipython examples, use Feth's ipython wrappers in functions.tex.
 dependances for beamer and these docs on debian:
     * latex-beamer
     * texlive-fonts-recommended
+    * texlive-latex-extra (fullpage package)
 
 Indentation convention:
     * add 2 spaces every time you use begin{}
