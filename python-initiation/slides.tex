@@ -2,11 +2,23 @@
 
 \input{sections/first_step}
 \input{sections/ipython}
+%
+%\input{sections/basic_types}
+%
+%\input{sections/python_syntax}
+%
+%\input{sections/python_use}
+%
+%\input{sections/python_libs}
 
-\input{sections/basic_types}
-
-\input{sections/python_syntax}
-
-\input{sections/python_use}
-
-\input{sections/python_libs}
+\begin{frame}[fragile]
+  \frametitle{Frame de test pour ipython en version listings}
+  \begin{ipython}{"Test ipython"}%
+~\ipinpt{}~from os import path  but I would want to import much more to go over that 80 characters we like to respect
+~\ipinpt{}~path.listdir('/tmp')
+~\ipoutp{}~[]
+~\ipinpt{}~a = "It seems crazy that /tmp is void it's too much and I can't figure out why, may I panic ?"
+~\ipinpt{}~a
+~\ipoutp{}~It seems crazy that /tmp is void it's too much and I can't figure out why, may I panic ?
+\end{ipython}
+\end{frame}
