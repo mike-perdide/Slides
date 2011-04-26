@@ -65,8 +65,9 @@
 }
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 
+% The title page for both article and presentation mode %
+% (presentation mode makes its own)                     %
 \begin{frame}
-  %\mode<article>{
     \begin{titlepage}
       \begin{center}
     %  \includegraphics[width=0.15\textwidth]{./medias/logo_majerti.png}\\[1cm]
@@ -102,21 +103,19 @@
            }
         \end{center}
       \end{titlepage}
-   %   }
   \end{frame}
       \newpage
 
+\begin{frame}%
+\frametitle{Table des matières}
+\setcounter{tocdepth}{1}
+\tableofcontents
+\end{frame}
+\newpage
 
-      \begin{frame}
-      \frametitle{Table des matières}
-      \setcounter{tocdepth}{1}
-      \tableofcontents
-      \end{frame}
-      \newpage
-
-      \input{sections/introduction}
+\input{sections/introduction}
 
 
-      \input{slides}
+\input{slides}
 
-      \end{document}
+\end{document}
