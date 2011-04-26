@@ -1,52 +1,98 @@
-\newcommand\ipythonin[1]{
-    \textcolor{green}{In [#1]:}
-}
-\newcommand\ipythonout[1]{
-    \textcolor{red}{Out[#1]:}
-}
-\newcommand\ipythoncont{
-    \textcolor{green}{~~~...:}
+% Requires : ifthen,color,listings packages (maybe more)
+% Build the box surrounding the ipython stuff (In : Out : ...)
+\newcommand\ipythonbox[1]{
+\makebox[33pt][l]{%
+#1
+}%
 }
 
-\newcount \inpy
-\newcount \uncovercount
+% Commands printing In[.]: Out[]: and breaklines :  ...: and \
+\newcommand\ipythonin[1]{%
+\setcounter{ipythoncolor}{0}%
+\ipythonbox{%
+\textcolor{green}{%
+\textnormal{\textbf{In\space\space[#1]:}}%
+}%
+}%
+}%
 
-\newenvironment{ipython}
-{
-\fontfamily{cmtt}
-\selectfont
-\begin{beamercolorbox}{terminal}
-\begin{semiverbatim}
-\inpy=0
-\uncovercount=1
-\uncover<0->{\$ ipython}
-}
-{
-\end{semiverbatim}
-\end{beamercolorbox}
+\newcommand\ipythonout[1]{%
+\setcounter{ipythoncolor}{1}%
+\ipythonbox{%
+\textcolor{red}{%
+\textnormal{\textbf{Out[#1]:}}%
+}%
+}%
+}%
+
+\newcommand\ipythondots{%
+\ifthenelse{\equal{\theipythoncolor}{0}}{%
+\ipythonbox{%
+\textcolor{green}{%
+\textnormal{\textbf{\space\space\space...:}}%
+}%
+}%
+}{}%
+}%
+
+\newcommand\ipythonbackslash{%
+\ifthenelse{\equal{\theipythoncolor}{0}}{%
+\backslash}%
+{}%
+}%
+
+\newcounter{inpy}%
+\newcounter{uncovercount}%
+\newcounter{ipythoncolor}%
+
+% Definition du style de la console ipython
+% TODO trouver comment virer les bordures blanches ???
+\lstdefinestyle{styleLangage}{%
+language           = python,%
+basicstyle         = \footnotesize\ttfamily\color{white},% ecriture standard
+identifierstyle    = \color{white},%
+commentstyle       = \color{blue},%
+keywordstyle       = \color{yellow},%
+stringstyle        = \color{gray},%
+emphstyle          = \color{green},%
+extendedchars      = true,% permet d'avoir des accents dans le code
+showspaces         = false,%
+showstringspaces   = false,%
+backgroundcolor    = \color{black},%
+rulecolor          = \color{black},%
+rulesepcolor       = \color{black},%
+fillcolor          = \color{black},%
+prebreak           = \hbox{$\ipythonbackslash{}$},%
+postbreak          = \hbox{$\ipdots{}\space$},%
+escapeinside       = ~~,%
+breaklines         = true,%
+breakatwhitespace  = true,
+breakautoindent    = false,%
+breakindent        = 0pt,
+frame=none, %
+columns=fixed,
+lineskip=5pt%
 }
 
-%\newcommand\ipprompt{
-%}
+\lstnewenvironment{ipython}[1]{%
+\lstset{%
+title={#1},
+style = styleLangage%
+}%
+\setcounter{inpy}{0}%
+\setcounter{uncovercount}{1}%
+\setcounter{ipythoncolor}{0}%
+}
+{}
 
-\newcommand\ipinpt[1]{
-    \advance \inpy by 1
-    \advance \uncovercount by 1
-    \uncover<\the\uncovercount->{\ipythonin{\the\inpy}$\texttt{#1}$}
+\newcommand\ipinpt[1]{%
+\addtocounter{inpy}{1}%
+\ipythonin{\theinpy}%
 }
 
-\newcommand\ipoutp[1]{
-    \advance \uncovercount by 1
-    \uncover<\the\uncovercount->{\ipythonout{\the\inpy}$\texttt{#1}$}
+\newcommand\ipoutp[1]{%
+\ipythonout{\theinpy}%
 }
-
-\newcommand\ipcont[1]{
-    \uncover<\the\uncovercount->{\ipythoncont $\texttt{#1}$}
-}
-
-\newcommand\hlcmd[1]{
-\texttt{\em{#1}}
-}
-\newcommand\ipwrapp[1]{
-\uncover<\the\uncovercount->{$\texttt{#1}$}
+\newcommand\ipdots[1]{%
+\ipythondots{}%
 }
