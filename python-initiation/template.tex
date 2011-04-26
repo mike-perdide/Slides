@@ -7,11 +7,14 @@
 
 \usefonttheme[onlylarge]{structurebold}
 \usecolortheme{orchid}
+
+
+
 % orchid: noir sur blanc, headers bleu
 % fly: noir sur gris
 % albatross: blanc sur bleu
 % dove: blanc sur noir
-\setbeamerfont*{frametitle}{size=\normalsize,series=\bfseries}
+\setbeamerfont{frametitle}{size=\normalsize,series=\bfseries}
 %\setbeamertemplate{navigation symbols}{}
 
 \usepackage[english]{babel}
@@ -21,6 +24,8 @@
 %\usepackage{times}
 %\usepackage{lmodern}
 \usepackage[scaled=0.92]{helvet}
+\renewcommand\sfdefault{phv}
+\renewcommand\familydefault{\sfdefault}
 
 \usepackage{listings}
 \usepackage{relsize}
@@ -52,6 +57,7 @@
 
   \definecolor{sand}{HTML}{EEFFCC}
   \setbeamercolor{documentation}{fg=black, bg=sand}
+
 
   \AtBeginSection[]
   % this displays a title frame every time a new section begins.
