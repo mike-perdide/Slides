@@ -39,9 +39,6 @@
 }
 }
 
-%\newcommand\ipprompt{
-%}
-
 \newcommand\ipinpt[1]{ %
 \advance \inpy by 1 %
 \advance \uncovercount by 1 %
@@ -59,4 +56,48 @@
 }
 \newcommand\ipwrapp[1]{ %
 \uncover<\the\uncovercount->{$\texttt{#1}$} %
+}
+% Fonctions utilisées pour l'affichage de la grammaire %
+\lstnewenvironment{grammaire}{
+\mode<presentation>{
+\lstset{
+basicstyle         = \footnotesize\ttfamily\color{black},
+identifierstyle    = \color{black},%
+commentstyle       = \color{black},%
+keywordstyle       = \color{black},%
+stringstyle        = \color{black},%
+emphstyle          = \color{black},%
+extendedchars      = true,% permet d'avoir des accents dans le code
+showspaces         = false,%
+showstringspaces   = false,%
+backgroundcolor    = \color{sand},%
+columns=fixed,
+}}
+\mode<article>{
+\lstset{
+basicstyle         = \footnotesize\ttfamily\color{black},
+identifierstyle    = \color{black},%
+commentstyle       = \color{black},%
+keywordstyle       = \color{black},%
+stringstyle        = \color{black},%
+emphstyle          = \color{black},%
+extendedchars      = true,% permet d'avoir des accents dans le code
+showspaces         = false,%
+showstringspaces   = false,%
+backgroundcolor    = \color{white},%
+columns=fixed,
+}
+}
+}
+{}
+% Environnement spécifique au terminal %
+\newenvironment{terminal}{
+\mode<article>{\begin{framed}}
+\mode<presentation>{\begin{beamercolorbox}{terminal}}
+\begin{semiverbatim}
+}
+{
+\end{semiverbatim}
+\mode<presentation>{\end{beamercolorbox}}
+\mode<article>{\end{framed}}
 }
