@@ -75,12 +75,12 @@ Comment nommer une variable
 \begin{frame}[fragile]
   \frametitle{Les instructions composées : l'exemple de if}
   \emph{Le «\texttt{if}» tel que dans la grammaire:}\\
-  \begin{beamercolorbox}{documentation}
-  \small{\verb|if_stmt:|} \\
-  \small{\verb|    'if' test ':' suite|} \\
-  \small{\verb|    ('elif' test ':' suite)*|} \\
-  \small{\verb|    ['else' ':' suite]|}
-  \end{beamercolorbox}
+  \begin{grammaire}
+if_stmt:
+    'if' test ':' suite
+    ('elif' test ':' suite)*|
+    ['else' ':' suite]|
+  \end{grammaire}
 \end{frame}
 
 \begin{frame}[fragile]
@@ -109,8 +109,7 @@ Liste fournie pour référence, ne pas essayer de tout comprendre maintenant !
 \begin{frame}[fragile]
   \frametitle{Les instructions composées : liste brute}
 \begin{figure}
-  \begin{beamercolorbox}{documentation}
-\scriptsize\begin{verbatim}
+\begin{grammaire}
 if_stmt: 'if' test ':' suite ('elif' test ':' suite)* ['else' ':' suite]
 while_stmt: 'while' test ':' suite ['else' ':' suite]
 for_stmt: 'for' exprlist 'in' testlist ':' suite ['else' ':' suite]
@@ -123,8 +122,7 @@ with_stmt: 'with' with_item (',' with_item)*  ':' suite
 with_item: test ['as' expr]
 # NB compile.c makes sure that the default except clause is last
 except_clause: 'except' [test [('as' | ',') test]]
-\end{verbatim}
-  \end{beamercolorbox}
+\end{grammaire}
 \def\figurename{extrait de la grammaire de Python}
 \caption{http://docs.python.org/reference/grammar.html}
 \end{figure}
@@ -210,11 +208,10 @@ else:
     print "else"
   \end{lstlisting}
 
-  \begin{beamercolorbox}{terminal}
-  \begin{semiverbatim}
- \$ python example.py
- \uncover<2>{my_str = word} \end{semiverbatim}
-  \end{beamercolorbox}
+\begin{terminal}
+  \$ python example.py
+  \uncover<2>{my_str = word}
+\end{terminal}
 
 \end{frame}
 
