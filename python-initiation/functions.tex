@@ -101,3 +101,12 @@ columns=fixed,
 \mode<presentation>{\end{beamercolorbox}}
 \mode<article>{\end{framed}}
 }
+% Liste avec des items alignés à gauche (util pour le support de cours)
+\newenvironment{llist}{
+\begin{flushleft}
+\begin{itemize}
+}
+{
+\end{itemize}
+\end{flushleft}
+}
