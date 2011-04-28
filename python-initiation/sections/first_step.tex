@@ -5,47 +5,48 @@
   \frametitle{Qu'est-ce qu'un process Python?}
   Comme pour tout programme :
   \begin{itemize}
-    \item[3] Un interprêteur (processeur)
-    \item[2] Un environnement d'exécution
     \item[1] Du code : ici, du bytecode
+    \item[2] Un environnement d'exécution
+    \item[3] Un interprêteur (processeur)
   \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]
   \frametitle{Le bytecode}
-  \begin{itemize}
-    \item Obtenu par \em{compilation} de code source
+  \begin{llist}
+    \item Obtenu par compilation de code source
+    \mode<article>{\linebreak Le code source (fichier .py) est compilé en bytecode de manière transparente lors de l'appel à votre fichier.}
     \item Portable
-  \end{itemize}
+  \end{llist}
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{L'environnement}
+  \frametitle{L'environnement d'éxécution}
   Cette notion comprend
   \begin{itemize}
-    \item Les variables d'environnement \pause
-    \item Le système d'exploitation (OS)\ldots \pause
-    \item Les IPC, fichiers, matériels\ldots auxquels l'OS donne accès \pause
+    \item Les variables d'environnement
+    \item Le système d'exploitation (OS)\ldots
+    \item Les IPC, fichiers, matériels\ldots auxquels l'OS donne accès
     \item Via les périphériques matériels : l'utilisateur, l'univers
   \end{itemize}
   TODO: AJOUTER DES IMAGES?
 \end{frame}
 
-\begin{frame}[fragile]
-  \frametitle{Le bytecode}
-  \begin{itemize}
-    \item Obtenu par \em{compilation} de code source
-    \item Portable
-  \end{itemize}
-\end{frame}
-
-
-\subsection{Au c\oe ur l'interprêteur Python}
+\subsection{Au c\oe ur de l'interprêteur Python}
 \begin{frame}[fragile]
   \frametitle{Lancer Python interactivement}
-  \begin{itemize}
+  \begin{llist}
     \item Shell python interactif
     \item Apporte en plus un certain nombre de fonctionnalités intéressantes
-  \end{itemize}
+  \end{llist}
 \end{frame}
+
 \newpage
+%    \begin{llist}
+%    \item La commande help
+%    \mode<article>{\linebreak La commande help permet de découvrir l'usage et les spécificités d'un objet.}
+%    \item La commande dir
+%    \mode<article>{\linebreak La commande dir permet de lister les méthodes d'un objet}
+%    \item Il est possible de modifier l'environnement.
+%    \item \ldots
+%    \end{llist}
